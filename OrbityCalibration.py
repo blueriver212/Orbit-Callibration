@@ -187,12 +187,11 @@ def HCL_diff(eph1, eph2):
 
     return [time, H_diffs, C_diffs, L_diffs, positions, velocity, xyz_correction] # also return the position and velocity of the TLE ephemeris for the correction mapping
 
-
 ############################################################################################
 # GRACE 1
 ############################################################################################
 # chose the files that you want to use
-RawDataFolder = 'v1'
+RawDataFolder = 'v2'
 data_format = 'sp3'
 
 # load the sp3 file
@@ -219,7 +218,7 @@ if data_format == 'pickle':
 start_time = product.satellites[0].records[0].time
 end_time = product.satellites[0].records[-1].time
 start_time_range = start_time - timedelta(days=2)
-end_time_range = start_time + timedelta(days=2)
+end_time_range = end_time + timedelta(days=2)
 print('Start date: {}'.format(start_time))
 print('End date: {}'.format(end_time))
 
